@@ -17,17 +17,23 @@ ActiveRecord::Schema.define(version: 20150517192353) do
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer  "count"
     t.integer  "user_id"
-    t.integer  "photo_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "photos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "album_id"
+    t.string   "name",                    null: false
+    t.text     "description"
+    t.integer  "likes",       default: 0
+    t.string   "image_url"
+    t.string   "source"
+    t.string   "source_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -45,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150517192353) do
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
+    t.integer "photo_id"
     t.integer "taggings_count", default: 0
   end
 
