@@ -6,5 +6,10 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
   end
-
+  factory :photo do
+    name "penguin"
+    description "penguin"
+    tag "animal"
+    likes 1
+  end
 end
