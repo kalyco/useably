@@ -10,4 +10,22 @@ if Rails.env.development?
     source_name:"telegraph",
     source: "http://www.telegraph.co.uk/news/worldnews/europe/poland/10714473/Doomed-penguin-offered-second-chance-by-3D-printer.html"
   )
+  photo1 = Photo.find_or_create_by!(
+    user_id: 1,
+    name: "penguin",
+    likes: 3,
+    image_url: "http://dreamatico.com/data_images/penguin/penguin-5.jpg"
+  )
+  photo2 = Photo.find_or_create_by!(
+    user_id: 1,
+    name: "penguin",
+    likes: 3,
+    image_url: "http://dreamatico.com/data_images/penguin/penguin-1.jpg"
+  )
+  photo2 = Photo.find_or_create_by!(
+    user_id: 1,
+    name: "penguin",
+    likes: 3,
+    image_url: "http://dreamatico.com/data_images/penguin/penguin-4.jpg"
+  )
 end

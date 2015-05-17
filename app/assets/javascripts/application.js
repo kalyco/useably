@@ -16,3 +16,8 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$( window ).load( function()
+{
+    $( '#list' ).masonry( { itemSelector: '.item' } );
+});
