@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    binding.pry
     @photo = Photo.new(photo_params)
     @photo.user = current_user
     if @photo.save

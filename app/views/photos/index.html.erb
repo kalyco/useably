@@ -3,9 +3,10 @@
       <div id='list'>
         <% @photos.each do |photo| %>
           <div class='item'><%= image_tag(photo.image_file) %>
-          <%= photo.likes %></div>
+            <%= photo.likes %>
+          </div>
         <% end %>
       </div>
-    </div>
   </div>
+</div>
 
