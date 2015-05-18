@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+
   def index
     if params[:query]
       @pg_search_result = PgSearch.multisearch(params[:query])

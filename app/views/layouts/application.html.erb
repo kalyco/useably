@@ -6,49 +6,57 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="left-col">
+  <div class="top-bar-thing">
     <div class="logo"><%= link_to image_tag("http://i.imgur.com/M4S7iR3.png"), photos_path %>
     </div>
-    <ul class="filters">
-      <li><%= link_to 'Section 1', photos_path %></li>
-      <li><%= link_to 'Section 2', photos_path %></li>
-      <li><%= link_to 'Section 3', photos_path %></li>
-      <li><%= link_to 'Section 4', photos_path %></li>
-      <li><%= link_to 'Section 5', photos_path %></li>
-    </ul>
-    <div class="about-index">
-    <p>wordswordswords</p>
-    </div>
-  </div>
-  <div class="right-col">
     <div class="search">
       <%= form_tag(photos_path(@photos), :method => "get", class: "navbar-form", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], class: "span2", placeholder: "search photos" %>
+        <%= text_field_tag :search, params[:search], class: "span2", placeholder: "search photos" %>
       <% end %>
-   </div>
-    <ul class="right">
-      <%- if current_user -%>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      <%- else -%>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-      <%- end -%>
+    </div>
+    <ul >
+      <li class="nav-item"><a href="#">profile</a></li>
+      <li class="nav-item"><a href="#">favorites</a></li>
+      <li class="nav-item"><a href="#">albums</a></li>
+      <li class="nav-item"><a href="#">submit</a></li>
     </ul>
+    <ul>
+      <% if current_user %>
+        <li class="user-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li class="user-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      <%- else -%>
+        <li class="user-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li class="user-nav"><%= link_to 'Sign In', new_user_session_path %></li>
+      <%- end -%>
+      </ul>
+    </div>
   </div>
-</nav>
 
+    <div class="left-col">
+      <ul class="filters">
+        <li><%= link_to 'Section 1', photos_path %></li>
 
-  <%- flash.each do |key, value| -%>
+        <li><%= link_to 'Section 2', photos_path %></li>
+
+        <li><%= link_to 'Section 3', photos_path %></li>
+
+        <li><%= link_to 'Section 4', photos_path %></li>
+        <li><%= link_to 'Section 5', photos_path %></li>
+      </ul>
+      <div class="about-index">
+        <p>wordswordswords</p>
+      </div>
+    </div>
+
+  <div class="main-wrapper">
+  <% flash.each do |key, value| %>
     <div class="flash flash-<%= key %>">
       <%= value %>
     </div>
-  <%- end -%>
+  <% end %>
 
   <%= yield %>
-
+  </div>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 </body>
