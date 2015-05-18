@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518003859) do
+ActiveRecord::Schema.define(version: 20150518180312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150518003859) do
     t.string   "name",                    null: false
     t.text     "description"
     t.integer  "likes",       default: 0
-    t.string   "image_url"
+    t.string   "image_file"
     t.string   "source"
     t.string   "source_name"
     t.datetime "created_at"

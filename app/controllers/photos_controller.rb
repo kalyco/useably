@@ -10,4 +10,28 @@ class PhotosController < ApplicationController
     end
     @photos = Photo.all
   end
+
+  def new
+    @photo = Photo.new
+  end
+
+  def create
+    @photo = Photo.new(photo_params)
+    @photo.user = current_user
+    if @photo.save
+      flash[:notice] = "you have added a new photo!"
+      redirect_to photos_path
+    else
+      render :new
+    end
+  end
+
+  protected
+
+  def photo_params
+    params.require(:photo).permit(
+      :name, :description, :source, :image_file,
+      :tag
+    )
+  end
 end
