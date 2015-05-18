@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry'
 end
 
-gem 'acts-as-taggable-on', '~> 3.4'
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
 gem 'launchy', group: [:development, :test]
@@ -54,3 +53,4 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'magnific-popup-rails'
 gem 'masonry-rails'
+gem 'pg_search'

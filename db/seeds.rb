@@ -14,18 +14,30 @@ if Rails.env.development?
     user_id: 1,
     name: "penguin",
     likes: 3,
-    image_url: "http://dreamatico.com/data_images/penguin/penguin-5.jpg"
+    image_url: "http://i.imgur.com/P1m3dtp.jpg"
   )
   photo2 = Photo.find_or_create_by!(
     user_id: 1,
     name: "penguin",
     likes: 3,
-    image_url: "http://dreamatico.com/data_images/penguin/penguin-1.jpg"
+    image_url: "http://i.imgur.com/xBR8NuS.jpg"
   )
-  photo2 = Photo.find_or_create_by!(
+  photo3 = Photo.find_or_create_by!(
     user_id: 1,
     name: "penguin",
     likes: 3,
-    image_url: "http://dreamatico.com/data_images/penguin/penguin-4.jpg"
+    image_url: "http://i.imgur.com/0Hlg5V1.jpg"
+  )
+  photo3 = Photo.find_or_create_by!(
+    user_id: 1,
+    name: "penguin",
+    likes: 3,
+    image_url: "http://i.imgur.com/gEYpS9G.jpg"
+  )
+  photo4 = Photo.find_or_create_by!(
+    user_id: 1,
+    name: "penguin",
+    likes: 3,
+    image_url: "http://www.livememe.com/dqscg75"
   )
 end
