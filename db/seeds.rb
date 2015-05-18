@@ -38,6 +38,6 @@ if Rails.env.development?
     user_id: 1,
     name: "penguin",
     likes: 3,
-    image_url: "http://www.livememe.com/dqscg75"
+    image_url: "http://i.imgur.com/Je15zan.jpg"
   )
 end

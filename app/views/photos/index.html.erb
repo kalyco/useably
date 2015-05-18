@@ -1,8 +1,10 @@
-<div id='wrapper'>
-  <div id='list'>
-    <% @photos.each do |photo| %>
-      <div class='item'><%= image_tag(photo.image_url) %></div>
-      <%= photo.likes %>
-    <% end %>
+<section class="right-col">
+  <div id='photos'>
+    <div id='list'>
+      <% @photos.each do |photo| %>
+        <div class='item'><%= image_tag(photo.image_url) %>
+        <%= photo.likes %></div>
+      <% end %>
+    </div>
   </div>
-</div>
+</section>

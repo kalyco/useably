@@ -1,6 +1,4 @@
 class Photo < ActiveRecord::Base
-  include PgSearch
-  multisearchable against: :tag
   has_many :photo_tags
   has_many :tags, through: :photo_tags
   belongs_to :user

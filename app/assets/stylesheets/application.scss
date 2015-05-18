@@ -26,7 +26,7 @@ h1 {
   font-family: $VAG-font;
 }
 
-#wrapper
+#photos
 {
  max-width: 60em; /* 960 px */
  margin: 0 auto;
@@ -36,15 +36,35 @@ h1 {
  width: 103.125%; /* 990px */
  overflow: hidden;
  margin-left: -1.562%; /* 15px */
- margin-bottom: -1.875em; /* 30px */
+ margin-bottom: 10px;
 }
 
 .item {
-    width: 30.303%; /* 300px */
-    float: left;
-    margin: 0 1.515% 1.875em; /* 15px 30px */
+  width: 230px;
+  margin: 15px;
 }
 
 #search {
   width: 20%;
 }
+
+.right {
+  position: relative;
+  bottom: 27px;
+}
+
+.left-col {
+  float: left;
+  width: 320px;
+}
+
+.right-col {
+  float: left;
+  width: 600px;
+}
+
+.logo {
+  width: 175px;
+  height: 51px;
+}
+
