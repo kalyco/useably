@@ -1,7 +1,7 @@
 class PhotoTag < ActiveRecord::Base
-  belongs_to :photos
-  belongs_to :tags
+  belongs_to :photo
+  belongs_to :tag
 
   validates_presence_of :photo
-  validates_presence_of :tags
+  validates_presence_of :tag
 end

@@ -18,10 +18,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @tag = Tag.new(tag_params)
     @photo.user = current_user
     if @photo.save
       flash[:notice] = "you have added a new photo!"
+      @tag = Tag.find_or_create_by(tag_params)
+      @photo_tag = PhotoTag.find_or_create_by(photo: @photo, tag: @tag)
       redirect_to photos_path
     else
       render :new
@@ -32,13 +33,12 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(
-      :name, :description, :source, :image_file,
-      :tag
+      :name, :description, :source, :image_file
     )
   end
 
   def tag_params
     params.require(:tag).permit(
-      :name, :photo)
+      :name)
   end
 end
