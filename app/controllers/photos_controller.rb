@@ -1,14 +1,16 @@
 class PhotosController < ApplicationController
 
   def index
-    if params[:query]
-      @pg_search_result = PgSearch.multisearch(params[:query])
-      @photos = []
-      @pg_search_result.each do |result|
-      @photos << Photo.find(result.searchable_id)
-      end
+    if params["search"] == nil
+      @photos = Photo.all
+    else
+      tag = Tag.find_by(name: params["search"])
+      photo_tag = PhotoTag.find_by(tag: tag)
+      @photos = Photo.where(id: photo_tag.photo_id)
     end
-    @photos = Photo.all
+    if @photos == []
+      flash[:notice] = "no photos to display"
+    end
   end
 
   def new
