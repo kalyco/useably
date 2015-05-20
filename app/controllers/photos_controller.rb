@@ -13,11 +13,13 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
+    @tag = Tag.new
   end
 
   def create
-    binding.pry
     @photo = Photo.new(photo_params)
+    binding.pry
+    @tag = Tag.new(tag_params)
     @photo.user = current_user
     if @photo.save
       flash[:notice] = "you have added a new photo!"
@@ -34,5 +36,10 @@ class PhotosController < ApplicationController
       :name, :description, :source, :image_file,
       :tag
     )
+  end
+
+  def tag_params
+    params.require(:tag).permit(
+      :name, :photo)
   end
 end

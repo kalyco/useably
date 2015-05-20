@@ -28,7 +28,7 @@
           <%= f.text_area :source %>
         </div>
 
-        <%= f.fields_for :tags do |field| %>
+        <%= f.fields_for @tag do |field| %>
           <div class="field">
             <%= field.label "tags " %></div>
             <%= field.text_area :name %>
