@@ -2,8 +2,8 @@
   <div class="photos">
     <div id='list'>
       <% @photos.each do |photo| %>
-        <div class='item'><%= image_tag(photo.image_file) %>
-        <%= photo.likes %>
+        <div class='item'><%= link_to image_tag(photo.image_file), photo_path(photo) %>
+        <div class= "leyft"><%= photo.likes %></div>
         <div class="roight"><%= photo.time_added %></div>
         </div>
       <% end %>

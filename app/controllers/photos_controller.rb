@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit]
 
   def index
     if params["search"] == nil
@@ -15,6 +16,10 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find_by(id: params["id"])
+  end
+
   def new
     @photo = Photo.new
     @tag = Tag.new
@@ -23,8 +28,10 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     @photo.user = current_user
-    if @photo.save
-      flash[:notice] = "you have added a new photo!"
+    if @photo.save && current_user.has_authority?
+      flash[:notice] = "you have added a new photo"
+    elsif @photo.save
+      flash[:notice] = "your photo has been submitted for review"
       @tag = Tag.find_or_create_by(tag_params)
       @photo_tag = PhotoTag.find_or_create_by(photo: @photo, tag: @tag)
       redirect_to photos_path

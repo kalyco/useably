@@ -2,6 +2,8 @@ class Photo < ActiveRecord::Base
   has_many :photo_tags
   has_many :tags, through: :photo_tags
   belongs_to :user
+  has_many :favorite_recipes
+  has_many :favorited_by, through: :favorite_recipes, source: :user
   belongs_to :album
   mount_uploader :image_file, AvatarUploader
 

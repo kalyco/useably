@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :search_counts
+  has_many :photos
+  has_many :favorite_photos
+  has_many :favorites, through: :favorite_photos, source: :photo
 
   def has_authority?
     authority == "admin"
