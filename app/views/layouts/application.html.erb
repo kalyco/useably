@@ -34,14 +34,11 @@
 
     <div class="left-col">
       <ul class="filters">
-        <li><%= link_to 'Section 1', photos_path %></li>
-
-        <li><%= link_to 'Section 2', photos_path %></li>
-
-        <li><%= link_to 'Section 3', photos_path %></li>
-
-        <li><%= link_to 'Section 4', photos_path %></li>
-        <li><%= link_to 'Section 5', photos_path %></li>
+        <% if current_user != nil && current_user.tag_list != nil %>
+          <% current_user.tag_list.each do |tag| %>
+          <li><%= "##{tag.name}" %></li>
+          <% end %>
+        <% end %>
       </ul>
       <div class="about-index">
         <p>wordswordswords</p>

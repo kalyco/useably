@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
 
   def index
     if params["search"] == nil
-      @photos = Photo.all
+      @photos = Photo.where(approved: true)
     else
       count = SearchCount.find_or_create_by(title: params["search"])
       count.save_search(params["search"])

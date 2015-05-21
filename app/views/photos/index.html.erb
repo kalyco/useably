@@ -4,6 +4,7 @@
       <% @photos.each do |photo| %>
         <div class='item'><%= image_tag(photo.image_file) %>
         <%= photo.likes %>
+        <div class="roight"><%= photo.time_added %></div>
         </div>
       <% end %>
     </div>
