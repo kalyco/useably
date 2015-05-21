@@ -4,8 +4,10 @@ class PhotosController < ApplicationController
     if params["search"] == nil
       @photos = Photo.all
     else
+      count = SearchCount.find_or_create_by(title: params["search"])
+      count.save_search(params["search"])
       tag = Tag.find_by(name: params["search"])
-      photo_tag = PhotoTag.find_by(tag: tag)
+      photo_tag = PhotoTag.find_or_create_by(tag: tag)
       @photos = Photo.where(id: photo_tag.photo_id)
     end
     if @photos == []
