@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
       photo_tag = PhotoTag.find_or_create_by(tag: tag)
       @photos = Photo.where(id: photo_tag.photo_id)
     end
+    @photos.order(created_at: :DESC)
     if @photos == []
       flash[:notice] = "no photos to display"
     end

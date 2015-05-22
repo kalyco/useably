@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :search_counts
   has_many :photos
+  has_many :albums
   has_many :favorite_photos
   has_many :favorites, through: :favorite_photos, source: :photo
 
