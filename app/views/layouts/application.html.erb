@@ -6,23 +6,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="top-bar-thing">
     <div class="logo"><%= link_to image_tag("http://i.imgur.com/M4S7iR3.png"), photos_path %>
     </div>
-    <div class="search">
-      <%= form_tag(photos_path(@photos), :method => "get", class: "navbar-form", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], class: "span2", placeholder: "search photos" %>
-      <% end %>
+  <div class="top-bar-thing">
+    <div class="user_option_nav">
+      <div class="search">
+        <%= form_tag(photos_path(@photos), :method => "get", class: "navbar-form", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], class: "span2", placeholder: "search photos" %>
+        <% end %>
+      </div>
+      <ul>
+        <li class="nav-item"><a href="#">Profile</a></li>
+        <li class="nav-item"><a href="#">Favorites</a></li>
+        <li class="nav-item"><a href="#">Albums</a></li>
+        <li class="nav-item"><%= link_to "Submit", new_photo_path %></li>
+      </ul>
     </div>
-    <ul >
-      <li class="nav-item"><a href="#">profile</a></li>
-      <li class="nav-item"><a href="#">favorites</a></li>
-      <li class="nav-item"><a href="#">albums</a></li>
-      <li class="nav-item"><%= link_to "submit", new_photo_path %></li>
-    </ul>
     <ul>
       <% if current_user %>
-        <li class="user-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li class="user-nav"><%= link_to 'About', user_session_path(@mods) %></li>
         <li class="user-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <%- else -%>
         <li class="user-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>
@@ -52,7 +54,7 @@
         <div class="random-line">________________________</div>
       </ul>
       <div class="about_index">
-        <p>wordswordswords</p>
+
       </div>
     </div>
 

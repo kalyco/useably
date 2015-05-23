@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
 
   def index
+    @mods = User.where(authority: "admin")
     if params["search"] == nil
       @photos = Photo.where(approved: true)
     else
