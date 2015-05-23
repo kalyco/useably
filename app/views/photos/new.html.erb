@@ -13,34 +13,34 @@
     <div class="form-wrapper">
       <%= form_for @photo do |f| %>
 
-        <form class="form_field_large">
+        <div class="form_field_large">
           <%= f.label :name, "name" %>
           <%= f.text_field :name, autofocus: true %>
-        </form>
+        </div>
 
-        <form class="form_field_large">
+        <div class="form_field_large">
           <%= f.label :description, "description" %>
           <%= f.text_field :description %>
-       </form>
+       </div>
 
-        <form class="form_field_large">
+        <div class="form_field_large">
           <%= f.label :source, "source url" %>
           <%= f.text_field :source %>
-        </form>
+        </div>
 
         <%= fields_for @tag do |field| %>
-          <form class="form_field_large">
-            <%= field.label "tags", "tags" %></form>
+          <div class="form_field_large">
+            <%= field.label "tags", "tags" %></div>
             <%= field.text_field :name %>
         <% end %>
 
-        <form class="form_field_large">
+        <div class="form_field_large">
           <%= f.file_field :image_file %>
-        </form>
+        </div>
 
-        <form class="actions">
+        <div class="actions">
           <%= f.submit "add photo" %>
-        </form>
+        </div>
     <% end %>
   </div>
 </div>

@@ -24,8 +24,8 @@
     </div>
     <ul>
       <% if current_user %>
-        <li class="user-nav"><%= link_to 'About', user_session_path(@mods) %></li>
         <li class="user-nav"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li class="user-nav"><%= link_to 'About', user_session_path %></li>
       <%- else -%>
         <li class="user-nav"><%= link_to 'Sign Up', new_user_registration_path %></li>
         <li class="user-nav"><%= link_to 'Sign In', new_user_session_path %></li>
@@ -41,15 +41,15 @@
           <li><%= "##{tag.name}" %></li>
           <% end %>
         <% else %>
-        <li class="filter-item"> #user_interface </li>
-        <li class="filter-item"> #dashboard </li>
-        <li class="filter-item"> #mobile </li>
-        <li class="filter-item"> #android </li>
-        <li class="filter-item"> #iOS </li>
-        <li class="filter-item"> #calendar </li>
-        <li class="filter-item"> #graph </li>
-        <li class="filter-item"> #user </li>
-        <li class="filter-item"> #typography </li>
+        <li class="filter-item"><%= link_to "#user_interface", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#dashboard", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#mobile", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#android", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#iOS", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#calendar", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#graph", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#user", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#typography", new_photo_path %></li>
         <% end %>
         <div class="random-line">________________________</div>
       </ul>

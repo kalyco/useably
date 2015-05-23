@@ -38,6 +38,7 @@ class PhotosController < ApplicationController
       @photo_tag = PhotoTag.find_or_create_by(photo: @photo, tag: @tag)
       redirect_to photos_path
     else
+      flash[:notice] = "error adding photo"
       render :new
     end
   end

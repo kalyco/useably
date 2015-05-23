@@ -20,10 +20,6 @@ $(function(){ $(document).foundation(); });
 $( window ).load( function()
 {
     $( '#list' ).masonry( { itemSelector: '.item' } );
-});
-
-$( window ).load( function()
-{
     var columns    = 3,
         setColumns = function() { columns = $( window ).width() > 640 ? 3 : $( window ).width() > 320 ? 2 : 1; };
 
