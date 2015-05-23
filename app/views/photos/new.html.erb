@@ -7,40 +7,40 @@
 <% end %>
 
 
-  <h1>enter photo information</h1>
+  <div class="submit_title">Submit your work</div>
 
   <div class="row">
-    <div class="small-8 large-centered column">
+    <div class="form-wrapper">
       <%= form_for @photo do |f| %>
 
-        <div class="field">
+        <form class="form_field_large">
           <%= f.label :name, "name" %>
-          <%= f.text_area :name %>
-        </div>
+          <%= f.text_field :name, autofocus: true %>
+        </form>
 
-        <div class="field">
+        <form class="form_field_large">
           <%= f.label :description, "description" %>
-          <%= f.text_area :description %>
-       </div>
+          <%= f.text_field :description %>
+       </form>
 
-        <div class="field">
+        <form class="form_field_large">
           <%= f.label :source, "source url" %>
-          <%= f.text_area :source %>
-        </div>
+          <%= f.text_field :source %>
+        </form>
 
         <%= fields_for @tag do |field| %>
-          <div class="field">
-            <%= field.label "tags " %></div>
-            <%= field.text_area :name %>
+          <form class="form_field_large">
+            <%= field.label "tags", "tags" %></form>
+            <%= field.text_field :name %>
         <% end %>
 
-        <div class="field">
+        <form class="form_field_large">
           <%= f.file_field :image_file %>
-        </div>
+        </form>
 
-        <div class="actions">
+        <form class="actions">
           <%= f.submit "add photo" %>
-        </div>
+        </form>
     <% end %>
   </div>
 </div>

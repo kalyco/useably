@@ -38,9 +38,20 @@
           <% current_user.tag_list.each do |tag| %>
           <li><%= "##{tag.name}" %></li>
           <% end %>
+        <% else %>
+        <li class="filter-item"> #user_interface </li>
+        <li class="filter-item"> #dashboard </li>
+        <li class="filter-item"> #mobile </li>
+        <li class="filter-item"> #android </li>
+        <li class="filter-item"> #iOS </li>
+        <li class="filter-item"> #calendar </li>
+        <li class="filter-item"> #graph </li>
+        <li class="filter-item"> #user </li>
+        <li class="filter-item"> #typography </li>
         <% end %>
+        <div class="random-line">________________________</div>
       </ul>
-      <div class="about-index">
+      <div class="about_index">
         <p>wordswordswords</p>
       </div>
     </div>

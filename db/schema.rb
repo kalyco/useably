@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150521231820) do
     t.datetime "updated_at"
   end
 
-  create_table "pg_search_documents", force: :cascade do |t|
+  create_table "pg_search_documents", force: : cascade do |t|
     t.text     "content"
     t.integer  "searchable_id"
     t.string   "searchable_type"

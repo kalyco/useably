@@ -1,5 +1,5 @@
 <div class="right-col">
-  <div class="photos">
+  <div class="photos-wrapper">
     <div id='list'>
       <% @photos.each do |photo| %>
         <div class='item'><%= link_to image_tag(photo.image_file), photo_path(photo) %>
