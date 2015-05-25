@@ -14,20 +14,13 @@
 //= require jquery_ujs
 //= require foundation
 //= require_tree .
+//= require masonry.pkgd.min.js
 
 $(function(){ $(document).foundation(); });
 
-$( window ).load( function()
-{
-    $( '#list' ).masonry( { itemSelector: '.item' } );
-    var columns    = 3,
-        setColumns = function() { columns = $( window ).width() > 640 ? 3 : $( window ).width() > 320 ? 2 : 1; };
+var container = document.querySelector('#masonry');
+var masonry = new Masonry(container, {
+    columnWidth: 50,
+    itemSelector: '.item'
+  });
 
-    setColumns();
-    $( window ).resize( setColumns );
-
-    $( '#list' ).masonry(
-    {
-        itemSelector: '.item',
-    });
-});
