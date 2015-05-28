@@ -41,16 +41,15 @@
           <li><%= "##{tag.name}" %></li>
           <% end %>
         <% else %>
-        <li class="filter-item"><%= link_to(photos_path(@photos), :method => "get", class: "navbar-form", id: "search-form") do %> #user_interface</li>
-        <% end %>
-        <li class="filter-item"><%= link_to "#dashboard", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#mobile", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#android", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#iOS", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#calendar", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#graph", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#user", photos_path(@photos) %></li>
-        <li class="filter-item"><%= link_to "#typography", photos_path(@photos) %></li>
+        <li class="filter-item"><%= link_to "#user_interface", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#dashboard", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#mobile", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#android", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#iOS", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#calendar", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#graph", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#user", new_photo_path %></li>
+        <li class="filter-item"><%= link_to "#typography", new_photo_path %></li>
         <% end %>
         <div class="random-line">________________________</div>
       </ul>
