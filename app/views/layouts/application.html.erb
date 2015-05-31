@@ -11,8 +11,11 @@
   <div class="top-bar-thing">
     <div class="user_option_nav">
       <div class="search">
+        <div class="search_logo">
+          <%= image_tag "icons/search.svg" %>
+        </div>
         <%= form_tag(photos_path(@photos), :method => "get", class: "navbar-form", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], class: "span2", placeholder: "search photos" %>
+          <%= text_field_tag :search, params[:search], class: "span2", placeholder: "#{}Search" %>
         <% end %>
       </div>
       <ul>
