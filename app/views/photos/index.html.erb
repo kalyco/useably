@@ -2,12 +2,18 @@
   <div class="photos-wrapper">
     <div id="container" class="masonry-container">
     <% @photos.each do |photo| %>
-      <div class='item'><%= link_to image_tag(photo.image_file), photo_path(photo) %>
-      <%= photo.likes %>
-      <div class="roight"><%= photo.time_added %></div>
+      <div class='item'>
+        <div class='image-only'>
+          <%= link_to image_tag(photo.image_file), photo_path(photo) %>
+        </div>
+        <div class="image-likes">
+        <%= image_tag 'icons/favorite.svg' %>
+        <%=  photo.likes %>
+        </div>
+        <div class="time-added"><%= photo.time_added %>
+        </div>
+      </div>
       </div>
     <% end %>
-    </div>
-    </div>
   </div>
 </div>
